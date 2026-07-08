@@ -5758,3 +5758,733 @@
 2026-07-08 06:56:18 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/UNITDSPR_chart.png
 2026-07-08 06:56:18 │ WARNING  │ pandas_ta_classic.utils._core  │ [X] Series has 120 rows but indicator requires at least 200. Returning None.
 2026-07-08 06:56:21 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/BAJAJFINSV_chart.png
+2026-07-08 07:03:00 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache initialised at .cache/rsa_quicktrade
+2026-07-08 07:03:12 │ WARNING  │ rsa_quicktrade.core.constants  │ nsepython.fnolist() failed ('data'), using fallback
+2026-07-08 07:03:12 │ INFO     │ rsa_quicktrade.core.constants  │ Using hardcoded F&O list (180 symbols)
+2026-07-08 07:03:12 │ INFO     │ rsa_quicktrade.data.universe   │ Universe: 180 F&O tickers
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:RELIANCE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TCS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HDFCBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:INFY.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ICICIBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HINDUNILVR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SBIN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BHARTIARTL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:KOTAKBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ITC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:LT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:AXISBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BAJFINANCE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ASIANPAINT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MARUTI.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HCLTECH.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TITAN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SUNPHARMA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ULTRACEMCO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:WIPRO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NESTLEIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TATASTEEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NTPC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:POWERGRID.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:M&M.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TECHM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BAJAJFINSV.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ADANIENT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ADANIPORTS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:JSWSTEEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ONGC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:COALINDIA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DRREDDY.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CIPLA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:EICHERMOT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:APOLLOHOSP.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DIVISLAB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GRASIM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BPCL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BRITANNIA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BAJAJ-AUTO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HEROMOTOCO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:INDUSINDBK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TATACONSUM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HINDALCO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SBILIFE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HDFCLIFE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:UPL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SHRIRAMFIN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ABB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ABBOTINDIA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ABCAPITAL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ABFRL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ALKEM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:AMBUJACEM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:AUROPHARMA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ASTRAL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ATUL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:AUBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BALKRISIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BANDHANBNK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BANKBARODA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BATAINDIA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BERGEPAINT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BHEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BIOCON.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:BOSCHLTD.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CANFINHOME.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CHAMBLFERT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CHOLAFIN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:COFORGE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:COLPAL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CONCOR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:COROMANDEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CROMPTON.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CUB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:CUMMINSIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DABUR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DALBHARAT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DEEPAKNTR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DELTACORP.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DEVYANI.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DIXON.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:DLF.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ESCORTS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:EXIDEIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:FEDERALBNK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:FSL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GAIL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GLENMARK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GNFC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GODREJCP.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GODREJPROP.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GRANULES.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GSPL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:GUJGASLTD.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HAL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HAVELLS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HDFCAMC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HINDCOPPER.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HINDPETRO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:HONAUT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:IDFCFIRSTB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:IEX.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:INDHOTEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:INDIACEM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:INDIAMART.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:INDIGO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:IOC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:IPCALAB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:IRCTC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:JINDALSTEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:JKCEMENT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:JUBLFOOD.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:LALPATHLAB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:LAURUSLABS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:LICHSGFIN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:LTTS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:LUPIN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MANAPPURAM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MARICO.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MCX.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:METROPOLIS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MFSL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MGL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MOTHERSON.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MPHASIS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MRF.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:MUTHOOTFIN.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NAM-INDIA.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NATIONALUM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NAUKRI.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NAVINFLUOR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NBCC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NCC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:NMDC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:OBEROIRLTY.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:OFSS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PAGEIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PERSISTENT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PETRONET.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PFC.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PIDILITIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PIIND.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PNB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:POLYCAB.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PRESTIGE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:PVRINOX.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:RAMCOCEM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:RBLBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:RECLTD.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SAIL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SBICARD.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SIEMENS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SRF.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:STAR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SUNTV.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:SYNGENE.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TATACHEM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TATACOMM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TATAELXSI.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TATAPOWER.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TORNTPHARM.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TORNTPOWER.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TRENT.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:TVSMOTOR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:UBL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:UNIONBANK.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:UNITDSPR.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:VEDL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:VOLTAS.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:WHIRLPOOL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ZEEL.NS
+2026-07-08 07:03:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1d_2y:ZYDUSLIFE.NS
+2026-07-08 07:03:12 │ INFO     │ rsa_quicktrade.data.downloader │ Downloading 5 / 180 tickers (1d, 2y) …
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('CREATE TABLE IF NOT EXISTS "_tz_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['GMRINFRA.NS', 1, 0])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('CREATE TABLE IF NOT EXISTS "_tz_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['PEL.NS', 1, 0])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('CREATE TABLE IF NOT EXISTS "_tz_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['LTIM.NS', 1, 0])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('CREATE TABLE IF NOT EXISTS "_tz_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:12 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['MCDOWELL-N.NS', 1, 0])
+2026-07-08 07:03:13 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:14 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:15 │ ERROR    │ yfinance                       │ $MCDOWELL-N.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:15 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['TATAMOTORS.NS', 1, 0])
+2026-07-08 07:03:15 │ ERROR    │ yfinance                       │ $PEL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:15 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:15 │ ERROR    │ yfinance                       │ HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: LTIM.NS"}}}
+2026-07-08 07:03:15 │ ERROR    │ yfinance                       │ $GMRINFRA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:15 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:16 │ ERROR    │ yfinance                       │ $TATAMOTORS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:16 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:16 │ ERROR    │ yfinance                       │ $LTIM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:16 │ ERROR    │ yfinance                       │ 
+5 Failed downloads:
+2026-07-08 07:03:16 │ ERROR    │ yfinance                       │ ['MCDOWELL-N.NS', 'PEL.NS', 'GMRINFRA.NS', 'TATAMOTORS.NS', 'LTIM.NS']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:16 │ INFO     │ rsa_quicktrade.data.downloader │ Download complete: 175 / 180 tickers succeeded (1d)
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:RELIANCE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TCS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HDFCBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:INFY.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ICICIBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HINDUNILVR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SBIN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BHARTIARTL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:KOTAKBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ITC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:LT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:AXISBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BAJFINANCE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ASIANPAINT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MARUTI.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HCLTECH.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TITAN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SUNPHARMA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ULTRACEMCO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:WIPRO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NESTLEIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TATASTEEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NTPC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:POWERGRID.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:M&M.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TECHM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BAJAJFINSV.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ADANIENT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ADANIPORTS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:JSWSTEEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ONGC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:COALINDIA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DRREDDY.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CIPLA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:EICHERMOT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:APOLLOHOSP.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DIVISLAB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GRASIM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BPCL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BRITANNIA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BAJAJ-AUTO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HEROMOTOCO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:INDUSINDBK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TATACONSUM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HINDALCO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SBILIFE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HDFCLIFE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:UPL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SHRIRAMFIN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ABB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ABBOTINDIA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ABCAPITAL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ABFRL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ALKEM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:AMBUJACEM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:AUROPHARMA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ASTRAL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ATUL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:AUBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BALKRISIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BANDHANBNK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BANKBARODA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BATAINDIA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BERGEPAINT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BHEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BIOCON.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:BOSCHLTD.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CANFINHOME.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CHAMBLFERT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CHOLAFIN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:COFORGE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:COLPAL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CONCOR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:COROMANDEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CROMPTON.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CUB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:CUMMINSIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DABUR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DALBHARAT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DEEPAKNTR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DELTACORP.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DEVYANI.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DIXON.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:DLF.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ESCORTS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:EXIDEIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:FEDERALBNK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:FSL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GAIL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GLENMARK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GNFC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GODREJCP.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GODREJPROP.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GRANULES.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:GUJGASLTD.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HAL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HAVELLS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HDFCAMC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HINDCOPPER.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HINDPETRO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:HONAUT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:IDFCFIRSTB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:IEX.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:INDHOTEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:INDIACEM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:INDIAMART.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:INDIGO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:IOC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:IPCALAB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:IRCTC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:JINDALSTEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:JKCEMENT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:JUBLFOOD.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:LALPATHLAB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:LAURUSLABS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:LICHSGFIN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:LTTS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:LUPIN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MANAPPURAM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MARICO.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MCX.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:METROPOLIS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MFSL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MGL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MOTHERSON.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MPHASIS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MRF.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:MUTHOOTFIN.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NAM-INDIA.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NATIONALUM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NAUKRI.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NAVINFLUOR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NBCC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NCC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:NMDC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:OBEROIRLTY.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:OFSS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PAGEIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PERSISTENT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PETRONET.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PFC.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PIDILITIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PIIND.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PNB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:POLYCAB.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PRESTIGE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:PVRINOX.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:RAMCOCEM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:RBLBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:RECLTD.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SAIL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SBICARD.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SIEMENS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SRF.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:STAR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SUNTV.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:SYNGENE.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TATACHEM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TATACOMM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TATAELXSI.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TATAPOWER.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TORNTPHARM.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TORNTPOWER.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TRENT.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:TVSMOTOR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:UBL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:UNIONBANK.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:UNITDSPR.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:VEDL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:VOLTAS.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:WHIRLPOOL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ZEEL.NS
+2026-07-08 07:03:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  ohlcv_1wk_2y:ZYDUSLIFE.NS
+2026-07-08 07:03:16 │ INFO     │ rsa_quicktrade.data.downloader │ Downloading 6 / 180 tickers (1wk, 2y) …
+2026-07-08 07:03:16 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['GMRINFRA.NS', 1, 0])
+2026-07-08 07:03:16 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['PEL.NS', 1, 0])
+2026-07-08 07:03:16 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['LTIM.NS', 1, 0])
+2026-07-08 07:03:16 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['GSPL.NS', 1, 0])
+2026-07-08 07:03:17 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:17 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['MCDOWELL-N.NS', 1, 0])
+2026-07-08 07:03:17 │ ERROR    │ yfinance                       │ $GMRINFRA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:17 │ DEBUG    │ peewee                         │ ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['TATAMOTORS.NS', 1, 0])
+2026-07-08 07:03:17 │ ERROR    │ yfinance                       │ $PEL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:17 │ ERROR    │ yfinance                       │ $LTIM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:17 │ DEBUG    │ peewee                         │ ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2026-07-08 07:03:18 │ ERROR    │ yfinance                       │ $MCDOWELL-N.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:18 │ ERROR    │ yfinance                       │ $TATAMOTORS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:18 │ ERROR    │ yfinance                       │ 
+6 Failed downloads:
+2026-07-08 07:03:18 │ ERROR    │ yfinance                       │ ['GSPL.NS']: YFException("The following 'Dividends' events are out-of-range, did not expect with interval 1wk: DatetimeIndex(['2025-09-10 00:00:00+05:30'], dtype='datetime64[s, Asia/Kolkata]', freq=None)")
+2026-07-08 07:03:18 │ ERROR    │ yfinance                       │ ['GMRINFRA.NS', 'PEL.NS', 'LTIM.NS', 'MCDOWELL-N.NS', 'TATAMOTORS.NS']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-08 07:03:18 │ INFO     │ rsa_quicktrade.data.downloader │ Download complete: 174 / 180 tickers succeeded (1wk)
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  index:^NSEI
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded ULTRACEMCO.NS — avg vol 245749 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded TATAMOTORS.NS — no data
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded APOLLOHOSP.NS — avg vol 285826 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded DIVISLAB.NS — avg vol 316052 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded BRITANNIA.NS — avg vol 267299 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded BAJAJ-AUTO.NS — avg vol 352811 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded ABB.NS — avg vol 282288 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded ABBOTINDIA.NS — avg vol 11530 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded ALKEM.NS — avg vol 148152 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded ATUL.NS — avg vol 18031 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded BALKRISIND.NS — avg vol 151067 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded BOSCHLTD.NS — avg vol 46371 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded CANFINHOME.NS — avg vol 324198 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded COLPAL.NS — avg vol 457672 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded COROMANDEL.NS — avg vol 391630 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded CUMMINSIND.NS — avg vol 459098 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded DALBHARAT.NS — avg vol 314314 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded DEEPAKNTR.NS — avg vol 151599 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded ESCORTS.NS — avg vol 134812 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded GMRINFRA.NS — no data
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded HONAUT.NS — avg vol 5424 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded INDIACEM.NS — avg vol 250957 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded INDIAMART.NS — avg vol 111458 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded IPCALAB.NS — avg vol 218870 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded JKCEMENT.NS — avg vol 87024 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded LTIM.NS — no data
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded LTTS.NS — avg vol 99543 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded MCDOWELL-N.NS — no data
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded METROPOLIS.NS — avg vol 316039 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded MGL.NS — avg vol 228720 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded MRF.NS — avg vol 8567 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded NAVINFLUOR.NS — avg vol 141460 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded OFSS.NS — avg vol 294431 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded PAGEIND.NS — avg vol 34745 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded PEL.NS — no data
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded PIIND.NS — avg vol 288919 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded POLYCAB.NS — avg vol 336552 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded PVRINOX.NS — avg vol 195514 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded RAMCOCEM.NS — avg vol 275418 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded SIEMENS.NS — avg vol 338454 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded SRF.NS — avg vol 474149 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded STAR.NS — avg vol 169972 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded SUNTV.NS — avg vol 214844 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded TATAELXSI.NS — avg vol 342981 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded TORNTPHARM.NS — avg vol 480780 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded TORNTPOWER.NS — avg vol 333576 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded UBL.NS — avg vol 108095 < 500000
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.data.universe   │ Excluded WHIRLPOOL.NS — avg vol 245330 < 500000
+2026-07-08 07:03:18 │ INFO     │ rsa_quicktrade.data.universe   │ Liquidity filter: 180 → 132 tickers (min vol=500000, min price=₹50)
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:RELIANCE.NS
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:RELIANCE
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TCS.NS
+2026-07-08 07:03:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TCS
+2026-07-08 07:03:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HDFCBANK.NS
+2026-07-08 07:03:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HDFCBANK
+2026-07-08 07:03:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:INFY.NS
+2026-07-08 07:03:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:INFY
+2026-07-08 07:03:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ICICIBANK.NS
+2026-07-08 07:03:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ICICIBANK
+2026-07-08 07:03:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HINDUNILVR.NS
+2026-07-08 07:03:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HINDUNILVR
+2026-07-08 07:03:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SBIN.NS
+2026-07-08 07:03:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SBIN
+2026-07-08 07:03:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BHARTIARTL.NS
+2026-07-08 07:03:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BHARTIARTL
+2026-07-08 07:03:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:KOTAKBANK.NS
+2026-07-08 07:03:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:KOTAKBANK
+2026-07-08 07:03:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ITC.NS
+2026-07-08 07:03:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ITC
+2026-07-08 07:03:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:LT.NS
+2026-07-08 07:03:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:LT
+2026-07-08 07:03:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:AXISBANK.NS
+2026-07-08 07:03:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:AXISBANK
+2026-07-08 07:03:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BAJFINANCE.NS
+2026-07-08 07:03:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BAJFINANCE
+2026-07-08 07:03:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ASIANPAINT.NS
+2026-07-08 07:03:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ASIANPAINT
+2026-07-08 07:03:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MARUTI.NS
+2026-07-08 07:03:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MARUTI
+2026-07-08 07:03:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HCLTECH.NS
+2026-07-08 07:03:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HCLTECH
+2026-07-08 07:03:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TITAN.NS
+2026-07-08 07:03:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TITAN
+2026-07-08 07:03:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SUNPHARMA.NS
+2026-07-08 07:03:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SUNPHARMA
+2026-07-08 07:03:26 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:WIPRO.NS
+2026-07-08 07:03:26 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:WIPRO
+2026-07-08 07:03:26 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NESTLEIND.NS
+2026-07-08 07:03:26 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NESTLEIND
+2026-07-08 07:03:26 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TATASTEEL.NS
+2026-07-08 07:03:26 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TATASTEEL
+2026-07-08 07:03:27 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NTPC.NS
+2026-07-08 07:03:27 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NTPC
+2026-07-08 07:03:27 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:POWERGRID.NS
+2026-07-08 07:03:27 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:POWERGRID
+2026-07-08 07:03:28 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:M&M.NS
+2026-07-08 07:03:28 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:M&M
+2026-07-08 07:03:28 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TECHM.NS
+2026-07-08 07:03:28 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TECHM
+2026-07-08 07:03:29 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BAJAJFINSV.NS
+2026-07-08 07:03:29 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BAJAJFINSV
+2026-07-08 07:03:29 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ADANIENT.NS
+2026-07-08 07:03:29 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ADANIENT
+2026-07-08 07:03:30 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ADANIPORTS.NS
+2026-07-08 07:03:30 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ADANIPORTS
+2026-07-08 07:03:30 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:JSWSTEEL.NS
+2026-07-08 07:03:30 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:JSWSTEEL
+2026-07-08 07:03:31 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ONGC.NS
+2026-07-08 07:03:31 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ONGC
+2026-07-08 07:03:31 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:COALINDIA.NS
+2026-07-08 07:03:31 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:COALINDIA
+2026-07-08 07:03:32 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:DRREDDY.NS
+2026-07-08 07:03:32 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:DRREDDY
+2026-07-08 07:03:32 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:CIPLA.NS
+2026-07-08 07:03:32 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:CIPLA
+2026-07-08 07:03:33 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:EICHERMOT.NS
+2026-07-08 07:03:33 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:EICHERMOT
+2026-07-08 07:03:33 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GRASIM.NS
+2026-07-08 07:03:33 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GRASIM
+2026-07-08 07:03:33 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BPCL.NS
+2026-07-08 07:03:33 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BPCL
+2026-07-08 07:03:34 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HEROMOTOCO.NS
+2026-07-08 07:03:34 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HEROMOTOCO
+2026-07-08 07:03:34 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:INDUSINDBK.NS
+2026-07-08 07:03:34 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:INDUSINDBK
+2026-07-08 07:03:35 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TATACONSUM.NS
+2026-07-08 07:03:35 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TATACONSUM
+2026-07-08 07:03:35 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HINDALCO.NS
+2026-07-08 07:03:35 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HINDALCO
+2026-07-08 07:03:36 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SBILIFE.NS
+2026-07-08 07:03:36 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SBILIFE
+2026-07-08 07:03:36 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HDFCLIFE.NS
+2026-07-08 07:03:36 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HDFCLIFE
+2026-07-08 07:03:37 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:UPL.NS
+2026-07-08 07:03:37 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:UPL
+2026-07-08 07:03:37 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SHRIRAMFIN.NS
+2026-07-08 07:03:37 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SHRIRAMFIN
+2026-07-08 07:03:37 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ABCAPITAL.NS
+2026-07-08 07:03:37 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ABCAPITAL
+2026-07-08 07:03:38 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ABFRL.NS
+2026-07-08 07:03:38 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ABFRL
+2026-07-08 07:03:38 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:AMBUJACEM.NS
+2026-07-08 07:03:38 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:AMBUJACEM
+2026-07-08 07:03:39 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:AUROPHARMA.NS
+2026-07-08 07:03:39 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:AUROPHARMA
+2026-07-08 07:03:39 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ASTRAL.NS
+2026-07-08 07:03:39 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ASTRAL
+2026-07-08 07:03:40 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:AUBANK.NS
+2026-07-08 07:03:40 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:AUBANK
+2026-07-08 07:03:40 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BANDHANBNK.NS
+2026-07-08 07:03:40 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BANDHANBNK
+2026-07-08 07:03:40 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BANKBARODA.NS
+2026-07-08 07:03:40 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BANKBARODA
+2026-07-08 07:03:41 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BATAINDIA.NS
+2026-07-08 07:03:41 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BATAINDIA
+2026-07-08 07:03:41 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BEL.NS
+2026-07-08 07:03:41 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BEL
+2026-07-08 07:03:42 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BERGEPAINT.NS
+2026-07-08 07:03:42 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BERGEPAINT
+2026-07-08 07:03:42 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BHEL.NS
+2026-07-08 07:03:42 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BHEL
+2026-07-08 07:03:43 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:BIOCON.NS
+2026-07-08 07:03:43 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:BIOCON
+2026-07-08 07:03:43 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:CHAMBLFERT.NS
+2026-07-08 07:03:43 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:CHAMBLFERT
+2026-07-08 07:03:44 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:CHOLAFIN.NS
+2026-07-08 07:03:44 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:CHOLAFIN
+2026-07-08 07:03:44 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:COFORGE.NS
+2026-07-08 07:03:44 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:COFORGE
+2026-07-08 07:03:44 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:CONCOR.NS
+2026-07-08 07:03:44 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:CONCOR
+2026-07-08 07:03:45 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:CROMPTON.NS
+2026-07-08 07:03:45 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:CROMPTON
+2026-07-08 07:03:45 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:CUB.NS
+2026-07-08 07:03:45 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:CUB
+2026-07-08 07:03:46 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:DABUR.NS
+2026-07-08 07:03:46 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:DABUR
+2026-07-08 07:03:46 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:DELTACORP.NS
+2026-07-08 07:03:46 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:DELTACORP
+2026-07-08 07:03:46 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:DEVYANI.NS
+2026-07-08 07:03:46 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:DEVYANI
+2026-07-08 07:03:47 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:DIXON.NS
+2026-07-08 07:03:47 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:DIXON
+2026-07-08 07:03:47 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:DLF.NS
+2026-07-08 07:03:47 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:DLF
+2026-07-08 07:03:48 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:EXIDEIND.NS
+2026-07-08 07:03:48 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:EXIDEIND
+2026-07-08 07:03:48 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:FEDERALBNK.NS
+2026-07-08 07:03:48 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:FEDERALBNK
+2026-07-08 07:03:49 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:FSL.NS
+2026-07-08 07:03:49 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:FSL
+2026-07-08 07:03:49 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GAIL.NS
+2026-07-08 07:03:49 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GAIL
+2026-07-08 07:03:49 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GLENMARK.NS
+2026-07-08 07:03:49 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GLENMARK
+2026-07-08 07:03:50 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GNFC.NS
+2026-07-08 07:03:50 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GNFC
+2026-07-08 07:03:50 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GODREJCP.NS
+2026-07-08 07:03:50 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GODREJCP
+2026-07-08 07:03:51 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GODREJPROP.NS
+2026-07-08 07:03:51 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GODREJPROP
+2026-07-08 07:03:51 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GRANULES.NS
+2026-07-08 07:03:51 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GRANULES
+2026-07-08 07:03:51 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GSPL.NS
+2026-07-08 07:03:52 │ DEBUG    │ nselib.libutil                 │ No period provided, using from_date=08-06-2026 and to_date=08-07-2026
+2026-07-08 07:03:52 │ DEBUG    │ nselib.capital_market.get_func │ Fetching price, volume and deliverable data for GSPL from 08-06-2026 to 08-07-2026
+2026-07-08 07:03:52 │ DEBUG    │ nselib.libutil                 │ Fetching cookies from origin_url: https://nsewebsite-staging.nseindia.com/report-detail/eq_security
+2026-07-08 07:03:52 │ DEBUG    │ nselib.libutil                 │ Fetching data from url: https://www.nseindia.com/api/historicalOR/generateSecurityWiseHistoricalData?from=08-06-2026&to=08-07-2026&symbol=GSPL&type=priceVolumeDeliverable&series=ALL&csv=true
+2026-07-08 07:03:53 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:GUJGASLTD.NS
+2026-07-08 07:03:53 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:GUJGASLTD
+2026-07-08 07:03:53 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HAL.NS
+2026-07-08 07:03:53 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HAL
+2026-07-08 07:03:54 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HAVELLS.NS
+2026-07-08 07:03:54 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HAVELLS
+2026-07-08 07:03:54 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HDFCAMC.NS
+2026-07-08 07:03:54 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HDFCAMC
+2026-07-08 07:03:55 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HINDCOPPER.NS
+2026-07-08 07:03:55 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HINDCOPPER
+2026-07-08 07:03:55 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:HINDPETRO.NS
+2026-07-08 07:03:55 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:HINDPETRO
+2026-07-08 07:03:56 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:IDFCFIRSTB.NS
+2026-07-08 07:03:56 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:IDFCFIRSTB
+2026-07-08 07:03:56 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:IEX.NS
+2026-07-08 07:03:56 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:IEX
+2026-07-08 07:03:57 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:INDHOTEL.NS
+2026-07-08 07:03:57 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:INDHOTEL
+2026-07-08 07:03:57 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:INDIGO.NS
+2026-07-08 07:03:57 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:INDIGO
+2026-07-08 07:03:58 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:IOC.NS
+2026-07-08 07:03:58 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:IOC
+2026-07-08 07:03:58 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:IRCTC.NS
+2026-07-08 07:03:58 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:IRCTC
+2026-07-08 07:03:59 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:JINDALSTEL.NS
+2026-07-08 07:03:59 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:JINDALSTEL
+2026-07-08 07:03:59 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:JUBLFOOD.NS
+2026-07-08 07:03:59 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:JUBLFOOD
+2026-07-08 07:04:00 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:LALPATHLAB.NS
+2026-07-08 07:04:00 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:LALPATHLAB
+2026-07-08 07:04:00 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:LAURUSLABS.NS
+2026-07-08 07:04:00 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:LAURUSLABS
+2026-07-08 07:04:10 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:LICHSGFIN.NS
+2026-07-08 07:04:10 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:LICHSGFIN
+2026-07-08 07:04:11 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:LUPIN.NS
+2026-07-08 07:04:11 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:LUPIN
+2026-07-08 07:04:11 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MANAPPURAM.NS
+2026-07-08 07:04:11 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MANAPPURAM
+2026-07-08 07:04:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MARICO.NS
+2026-07-08 07:04:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MARICO
+2026-07-08 07:04:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MCX.NS
+2026-07-08 07:04:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MCX
+2026-07-08 07:04:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MFSL.NS
+2026-07-08 07:04:12 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MFSL
+2026-07-08 07:04:13 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MOTHERSON.NS
+2026-07-08 07:04:13 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MOTHERSON
+2026-07-08 07:04:13 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MPHASIS.NS
+2026-07-08 07:04:13 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MPHASIS
+2026-07-08 07:04:14 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:MUTHOOTFIN.NS
+2026-07-08 07:04:14 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:MUTHOOTFIN
+2026-07-08 07:04:14 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NAM-INDIA.NS
+2026-07-08 07:04:14 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NAM-INDIA
+2026-07-08 07:04:14 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NATIONALUM.NS
+2026-07-08 07:04:14 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NATIONALUM
+2026-07-08 07:04:15 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NAUKRI.NS
+2026-07-08 07:04:15 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NAUKRI
+2026-07-08 07:04:15 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NBCC.NS
+2026-07-08 07:04:15 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NBCC
+2026-07-08 07:04:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NCC.NS
+2026-07-08 07:04:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NCC
+2026-07-08 07:04:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:NMDC.NS
+2026-07-08 07:04:16 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:NMDC
+2026-07-08 07:04:17 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:OBEROIRLTY.NS
+2026-07-08 07:04:17 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:OBEROIRLTY
+2026-07-08 07:04:17 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:PERSISTENT.NS
+2026-07-08 07:04:17 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:PERSISTENT
+2026-07-08 07:04:17 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:PETRONET.NS
+2026-07-08 07:04:17 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:PETRONET
+2026-07-08 07:04:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:PFC.NS
+2026-07-08 07:04:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:PFC
+2026-07-08 07:04:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:PIDILITIND.NS
+2026-07-08 07:04:18 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:PIDILITIND
+2026-07-08 07:04:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:PNB.NS
+2026-07-08 07:04:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:PNB
+2026-07-08 07:04:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:PRESTIGE.NS
+2026-07-08 07:04:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:PRESTIGE
+2026-07-08 07:04:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:RBLBANK.NS
+2026-07-08 07:04:19 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:RBLBANK
+2026-07-08 07:04:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:RECLTD.NS
+2026-07-08 07:04:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:RECLTD
+2026-07-08 07:04:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SAIL.NS
+2026-07-08 07:04:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SAIL
+2026-07-08 07:04:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SBICARD.NS
+2026-07-08 07:04:20 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SBICARD
+2026-07-08 07:04:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:SYNGENE.NS
+2026-07-08 07:04:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:SYNGENE
+2026-07-08 07:04:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TATACHEM.NS
+2026-07-08 07:04:21 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TATACHEM
+2026-07-08 07:04:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TATACOMM.NS
+2026-07-08 07:04:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TATACOMM
+2026-07-08 07:04:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TATAPOWER.NS
+2026-07-08 07:04:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TATAPOWER
+2026-07-08 07:04:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TRENT.NS
+2026-07-08 07:04:22 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TRENT
+2026-07-08 07:04:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:TVSMOTOR.NS
+2026-07-08 07:04:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:TVSMOTOR
+2026-07-08 07:04:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:UNIONBANK.NS
+2026-07-08 07:04:23 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:UNIONBANK
+2026-07-08 07:04:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:UNITDSPR.NS
+2026-07-08 07:04:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:UNITDSPR
+2026-07-08 07:04:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:VEDL.NS
+2026-07-08 07:04:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:VEDL
+2026-07-08 07:04:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:VOLTAS.NS
+2026-07-08 07:04:24 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:VOLTAS
+2026-07-08 07:04:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ZEEL.NS
+2026-07-08 07:04:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ZEEL
+2026-07-08 07:04:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  info:ZYDUSLIFE.NS
+2026-07-08 07:04:25 │ DEBUG    │ rsa_quicktrade.core.cache      │ Cache HIT  delivery:ZYDUSLIFE
+2026-07-08 07:04:47 │ INFO     │ rsa_quicktrade.scoring.ranking │ Ranking: 132 analysed → 131 passed filters → top 10 selected
+2026-07-08 07:04:47 │ INFO     │ rsa_quicktrade.output.report   │ HTML report saved to output/reports/report_20260708_070447.html
+2026-07-08 07:04:47 │ INFO     │ rsa_quicktrade.output.report   │ HTML report saved to workspace root as quicktrade_scan.html
+2026-07-08 07:04:49 │ WARNING  │ matplotlib.font_manager        │ findfont: Failed to find font weight semibold, now using 700.
+2026-07-08 07:04:51 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/AUBANK_chart.png
+2026-07-08 07:04:53 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/NAUKRI_chart.png
+2026-07-08 07:04:56 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/INDUSINDBK_chart.png
+2026-07-08 07:04:58 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/ZYDUSLIFE_chart.png
+2026-07-08 07:05:01 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/SHRIRAMFIN_chart.png
+2026-07-08 07:05:04 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/LAURUSLABS_chart.png
+2026-07-08 07:05:06 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/DRREDDY_chart.png
+2026-07-08 07:05:09 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/IDFCFIRSTB_chart.png
+2026-07-08 07:05:11 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/UNITDSPR_chart.png
+2026-07-08 07:05:15 │ INFO     │ rsa_quicktrade.output.visualization │ Chart saved: output/charts/BAJAJFINSV_chart.png

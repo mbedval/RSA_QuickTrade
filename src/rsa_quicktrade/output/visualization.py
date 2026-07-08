@@ -43,13 +43,24 @@ class ChartGenerator:
         Returns the path to the saved PNG, or None on error.
         """
         try:
-            df = self._prepare_df(data.daily, last_n_days)
-            if df.empty or len(df) < 10:
+            df_full = self._prepare_df(data.daily)
+            if df_full.empty or len(df_full) < 10:
                 logger.warning("Not enough data to chart %s", data.ticker)
                 return None
 
-            # Calculate indicators
-            addplots = self._build_overlays(df, analysis)
+            # Calculate indicators on the full dataset to avoid cold start / minimum length issues
+            addplots_full = self._build_overlays(df_full, analysis)
+
+            # Slice the main DataFrame to the last N days for plotting
+            df = df_full.tail(last_n_days)
+
+            # Slice all addplots to match the sliced main DataFrame
+            addplots = []
+            for ap in addplots_full:
+                ap_data = ap.get("data")
+                if isinstance(ap_data, (pd.Series, pd.DataFrame)):
+                    ap["data"] = ap_data.loc[df.index]
+                addplots.append(ap)
 
             # Support / Resistance horizontal lines
             hlines = self._build_hlines(analysis, df)
@@ -128,7 +139,7 @@ class ChartGenerator:
 
     # ── Internal Helpers ────────────────────────────────────────────────
 
-    def _prepare_df(self, daily: pd.DataFrame, last_n: int) -> pd.DataFrame:
+    def _prepare_df(self, daily: pd.DataFrame, last_n: int | None = None) -> pd.DataFrame:
         """Prepare DataFrame for mplfinance — needs DatetimeIndex + OHLCV columns."""
         df = daily.copy()
 
@@ -160,8 +171,9 @@ class ChartGenerator:
         if not isinstance(df.index, pd.DatetimeIndex):
             df.index = pd.to_datetime(df.index)
 
-        # Take last N days
-        df = df.tail(last_n)
+        # Take last N days if specified
+        if last_n is not None:
+            df = df.tail(last_n)
         return df
 
     def _build_overlays(
