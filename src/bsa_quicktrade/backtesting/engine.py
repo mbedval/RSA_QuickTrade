@@ -12,6 +12,8 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+import pandas_ta_classic as ta
+
 from bsa_quicktrade.core.config import AppConfig
 from bsa_quicktrade.core.models import AnalysisResult, BacktestResult, Signal, StockData
 
@@ -45,6 +47,19 @@ class BacktestEngine:
         window = window or self.bt_cfg.walk_forward_window
         daily = stock_data.daily.copy()
 
+        # Flatten MultiIndex columns if present
+        if isinstance(daily.columns, pd.MultiIndex):
+            ohlcv_names = {"open", "high", "low", "close", "volume", "adj close"}
+            flat_cols = []
+            for col in daily.columns:
+                metric_name = col[-1]
+                for part in col:
+                    if str(part).lower() in ohlcv_names:
+                        metric_name = part
+                        break
+                flat_cols.append(metric_name)
+            daily.columns = flat_cols
+
         if len(daily) < window + 20:
             return self._empty_result(getattr(analyzer, "name", "unknown"))
 
@@ -53,6 +68,7 @@ class BacktestEngine:
         if close is None or len(close) < window + 20:
             return self._empty_result(getattr(analyzer, "name", "unknown"))
 
+        atr_series = ta.atr(daily["High"], daily["Low"], daily["Close"], length=14)
         trades: list[dict[str, Any]] = []
         start_idx = max(window, 200)  # need enough history for long EMAs
 
@@ -71,34 +87,67 @@ class BacktestEngine:
             except Exception:
                 continue
 
-            # Next-day return
-            next_close = float(close.iloc[i + 1])
-            curr_close = float(close.iloc[i])
-            if curr_close <= 0:
+            # Bracket order exit simulation
+            entry_price = float(close.iloc[i])
+            if entry_price <= 0:
                 continue
-            next_return = (next_close - curr_close) / curr_close
-
-            # Adjust for costs
-            net_return = next_return - (self.commission + self.slippage)
-
-            # Record trade
+                
+            atr = float(atr_series.iloc[i]) if not pd.isna(atr_series.iloc[i]) else 0.0
+            
+            direction = None
             if result.signal.is_bullish:
+                direction = "long"
+            elif result.signal.is_bearish:
+                direction = "short"
+                
+            if direction:
+                if direction == "long":
+                    stop_loss = entry_price - 2.0 * atr if atr > 0 else entry_price * 0.97
+                    target_1 = entry_price + 3.0 * atr if atr > 0 else entry_price * 1.06
+                else:
+                    stop_loss = entry_price + 2.0 * atr if atr > 0 else entry_price * 1.03
+                    target_1 = entry_price - 3.0 * atr if atr > 0 else entry_price * 0.94
+                    
+                exit_price = entry_price
+                exited = False
+                max_holding_days = 10
+                
+                for d in range(i + 1, min(i + 1 + max_holding_days, len(daily))):
+                    day_low = float(daily["Low"].iloc[d])
+                    day_high = float(daily["High"].iloc[d])
+                    
+                    if direction == "long" and day_low <= stop_loss:
+                        exit_price = stop_loss
+                        exited = True
+                        break
+                    elif direction == "short" and day_high >= stop_loss:
+                        exit_price = stop_loss
+                        exited = True
+                        break
+                        
+                    if direction == "long" and day_high >= target_1:
+                        exit_price = target_1
+                        exited = True
+                        break
+                    elif direction == "short" and day_low <= target_1:
+                        exit_price = target_1
+                        exited = True
+                        break
+                        
+                if not exited:
+                    final_d = min(i + max_holding_days, len(daily) - 1)
+                    exit_price = float(close.iloc[final_d])
+                    
+                raw_ret = (exit_price - entry_price) / entry_price if direction == "long" else (entry_price - exit_price) / entry_price
+                net_return = raw_ret - (self.commission + self.slippage)
+                
                 trades.append({
                     "date": daily.index[i],
-                    "signal": "long",
+                    "signal": direction,
                     "score": result.score,
                     "return": net_return,
-                    "predicted_bullish": True,
-                    "actual_bullish": next_return > 0,
-                })
-            elif result.signal.is_bearish:
-                trades.append({
-                    "date": daily.index[i],
-                    "signal": "short",
-                    "score": result.score,
-                    "return": -net_return,  # short position profits on decline
-                    "predicted_bullish": False,
-                    "actual_bullish": next_return > 0,
+                    "predicted_bullish": direction == "long",
+                    "actual_bullish": raw_ret > 0 if direction == "long" else raw_ret < 0,
                 })
 
         if not trades:
@@ -111,12 +160,25 @@ class BacktestEngine:
         analyzers: list[Any],
         stock_data: StockData,
     ) -> BacktestResult:
-        """Backtest the combined scoring system across all analyzers."""
-        # Simplified: run each analyzer, combine signals via majority vote
         daily = stock_data.daily.copy()
+        # Flatten MultiIndex columns if present
+        if isinstance(daily.columns, pd.MultiIndex):
+            ohlcv_names = {"open", "high", "low", "close", "volume", "adj close"}
+            flat_cols = []
+            for col in daily.columns:
+                metric_name = col[-1]
+                for part in col:
+                    if str(part).lower() in ohlcv_names:
+                        metric_name = part
+                        break
+                flat_cols.append(metric_name)
+            daily.columns = flat_cols
+
         close = _get_close(daily)
         if close is None or len(daily) < 220:
             return self._empty_result("system")
+
+        atr_series = ta.atr(daily["High"], daily["Low"], daily["Close"], length=14)
 
         trades: list[dict[str, Any]] = []
 
@@ -150,30 +212,67 @@ class BacktestEngine:
                 continue
 
             avg_score = total_score / n_modules
-            next_close = float(close.iloc[i + 1])
-            curr_close = float(close.iloc[i])
-            if curr_close <= 0:
+            entry_price = float(close.iloc[i])
+            if entry_price <= 0:
                 continue
-            next_return = (next_close - curr_close) / curr_close
-            net_return = next_return - (self.commission + self.slippage)
-
-            if bullish_votes > bearish_votes and bullish_votes >= 3:
+                
+            atr = float(atr_series.iloc[i]) if not pd.isna(atr_series.iloc[i]) else 0.0
+            
+            # Vote threshold (min 2 votes - earlier entries)
+            direction = None
+            if bullish_votes > bearish_votes and bullish_votes >= 2:
+                direction = "long"
+            elif bearish_votes > bullish_votes and bearish_votes >= 2:
+                direction = "short"
+                
+            if direction:
+                if direction == "long":
+                    stop_loss = entry_price - 2.0 * atr if atr > 0 else entry_price * 0.97
+                    target_1 = entry_price + 3.0 * atr if atr > 0 else entry_price * 1.06
+                else:
+                    stop_loss = entry_price + 2.0 * atr if atr > 0 else entry_price * 1.03
+                    target_1 = entry_price - 3.0 * atr if atr > 0 else entry_price * 0.94
+                    
+                exit_price = entry_price
+                exited = False
+                max_holding_days = 10
+                
+                for d in range(i + 1, min(i + 1 + max_holding_days, len(daily))):
+                    day_low = float(daily["Low"].iloc[d])
+                    day_high = float(daily["High"].iloc[d])
+                    
+                    if direction == "long" and day_low <= stop_loss:
+                        exit_price = stop_loss
+                        exited = True
+                        break
+                    elif direction == "short" and day_high >= stop_loss:
+                        exit_price = stop_loss
+                        exited = True
+                        break
+                        
+                    if direction == "long" and day_high >= target_1:
+                        exit_price = target_1
+                        exited = True
+                        break
+                    elif direction == "short" and day_low <= target_1:
+                        exit_price = target_1
+                        exited = True
+                        break
+                        
+                if not exited:
+                    final_d = min(i + max_holding_days, len(daily) - 1)
+                    exit_price = float(close.iloc[final_d])
+                    
+                raw_ret = (exit_price - entry_price) / entry_price if direction == "long" else (entry_price - exit_price) / entry_price
+                net_return = raw_ret - (self.commission + self.slippage)
+                
                 trades.append({
                     "date": daily.index[i],
-                    "signal": "long",
+                    "signal": direction,
                     "score": avg_score,
                     "return": net_return,
-                    "predicted_bullish": True,
-                    "actual_bullish": next_return > 0,
-                })
-            elif bearish_votes > bullish_votes and bearish_votes >= 3:
-                trades.append({
-                    "date": daily.index[i],
-                    "signal": "short",
-                    "score": avg_score,
-                    "return": -net_return,
-                    "predicted_bullish": False,
-                    "actual_bullish": next_return > 0,
+                    "predicted_bullish": direction == "long",
+                    "actual_bullish": raw_ret > 0 if direction == "long" else raw_ret < 0,
                 })
 
         if not trades:
