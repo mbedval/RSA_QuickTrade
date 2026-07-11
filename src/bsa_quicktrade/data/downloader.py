@@ -94,13 +94,13 @@ class DataDownloader:
                         break
                     except Exception as exc:
                         wait = self.cfg.retry_backoff_factor ** attempt
-                        logger.warning(
+                        logger.debug(
                             "Chunk %d attempt %d failed: %s — retrying in %.1fs",
                             chunk_idx, attempt, exc, wait,
                         )
                         time.sleep(wait)
                 else:
-                    logger.error("Chunk %d failed after %d retries", chunk_idx, self.cfg.max_retries)
+                    logger.debug("Chunk %d failed after %d retries", chunk_idx, self.cfg.max_retries)
                     data = pd.DataFrame()
 
                 # Extract per-ticker DataFrames
@@ -154,7 +154,7 @@ class DataDownloader:
                 self.cache.set("index", index_ticker, df, ttl="daily")
             return df
         except Exception as exc:
-            logger.error("Index download failed for %s: %s", index_ticker, exc)
+            logger.debug("Index download failed for %s: %s", index_ticker, exc)
             return pd.DataFrame()
 
     def download_stock_info(self, ticker: str) -> dict[str, Any]:

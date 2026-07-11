@@ -20,7 +20,7 @@ from pathlib import Path
 
 from rich.console import Console
 from rich.panel import Panel
-from rich.progress import Progress, SpinnerColumn, TextColumn
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
 
 from bsa_quicktrade.core.cache import DataCache
 from bsa_quicktrade.core.config import AppConfig, load_config
@@ -71,6 +71,10 @@ def _download_all(config: AppConfig, cache: DataCache, tickers: list[str], filte
     """Download all required data."""
     from bsa_quicktrade.data.downloader import DataDownloader
     from bsa_quicktrade.data.nse_data import NSEDataFetcher
+    import logging
+    
+    # Suppress yfinance individual print errors
+    logging.getLogger('yfinance').setLevel(logging.CRITICAL)
 
     dl = DataDownloader(config, cache)
     nse = NSEDataFetcher(cache)
@@ -95,7 +99,9 @@ def _download_all(config: AppConfig, cache: DataCache, tickers: list[str], filte
     with Progress(
         SpinnerColumn(),
         TextColumn("[bold blue]{task.description}"),
-        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        BarColumn(bar_width=30),
+        TaskProgressColumn(),
+        TextColumn("[dim]({task.completed}/{task.total})[/]"),
         transient=True,
     ) as progress:
         task = progress.add_task("Fetching stock details", total=len(tickers))
@@ -132,6 +138,19 @@ def _download_all(config: AppConfig, cache: DataCache, tickers: list[str], filte
             progress.advance(task)
 
     console.print(f"[green]✓ Downloaded data for {len(stock_data)} stocks[/]")
+    
+    # Consolidate failed/delisted stocks and print highlight message
+    failed_tickers = [t.replace(".NS", "") for t in tickers if t not in daily or daily[t].empty]
+    if failed_tickers:
+        console.print()
+        console.print(Panel(
+            f"[bold yellow]⚠️ Information:[/] The following stock(s) were not found on NSE and may be delisted or invalid:\n"
+            f"[bold cyan]{', '.join(sorted(failed_tickers))}[/]",
+            border_style="yellow",
+            title="[bold yellow]Delisted / Missing Stocks[/]"
+        ))
+        console.print()
+
     return stock_data
 
 
@@ -151,11 +170,15 @@ def _analyze_all(
     with Progress(
         SpinnerColumn(),
         TextColumn("[bold blue]{task.description}"),
-        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        BarColumn(bar_width=30),
+        TaskProgressColumn(),
+        TextColumn("[dim]({task.completed}/{task.total})[/]"),
     ) as progress:
-        task = progress.add_task("Analyzing", total=len(stock_data))
+        task = progress.add_task("Analyzing stocks", total=len(stock_data))
 
         for ticker, data in stock_data.items():
+            symbol = ticker.replace(".NS", "")
+            progress.update(task, description=f"Analyzing {symbol}")
             results: dict[str, AnalysisResult] = {}
 
             for analyzer in analyzers:
@@ -248,7 +271,7 @@ def cmd_scan(args: argparse.Namespace, config: AppConfig) -> None:
         top_stocks = _rank_and_report(config, analyses)
 
         # 6. Charts
-        if top_stocks:
+        if getattr(args, "charts", False) and top_stocks:
             _generate_charts(config, stock_data, top_stocks)
 
     finally:
@@ -394,7 +417,11 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", help="Available commands")
 
     # scan
-    sub.add_parser("scan", help="Full market scan — Top 10 intraday opportunities")
+    p_scan = sub.add_parser("scan", help="Full market scan — Top 10 intraday opportunities")
+    p_scan.add_argument(
+        "--charts", action="store_true", default=False,
+        help="Generate visual charts for top ranked stocks",
+    )
 
     # analyze
     p_analyze = sub.add_parser("analyze", help="Deep-dive analysis on a single stock")

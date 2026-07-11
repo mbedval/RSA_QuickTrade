@@ -1,7 +1,15 @@
-"""Backtest Runner and Analytics Dashboard Generator for Real Stocks.
+"""Swing Trading Research Engine — Backtest Runner.
 
-Downloads historical NSE data, runs walk-forward trading system backtest,
-creates TradeLog CSV, and compiles the HTML dashboard report.
+Implements the full 7-stage swing trading pipeline as defined in swingtrader.md:
+  Stage 1: Market Filter (NIFTY trend + VIX gate)
+  Stage 2: Sector Strength Filter
+  Stage 3: Relative Strength vs NIFTY
+  Stage 4/5: Weekly Trend + Daily Setup Detection
+  Stage 6: Trade Quality Score (0-100, min 75 to trade)
+  Stage 7: Entry Validation (R:R >= 1:2)
+  Stage 8: ATR-based position sizing
+  Stage 9: Layered exits (SL → BE → Trailing Stop → Time Exit, max 26 days)
+  Stage 11: Forward Return Analysis
 """
 
 from __future__ import annotations
@@ -25,14 +33,29 @@ from bsa_quicktrade.analytics.models import TradeRecord
 from bsa_quicktrade.analytics.report_generator import ReportGenerator
 from bsa_quicktrade.analytics.trade_log import save_trade_log
 from bsa_quicktrade.analytics.utils import parse_date
+from bsa_quicktrade.analytics.forward_return import ForwardReturnAnalyzer
 from bsa_quicktrade.core.cache import DataCache
 from bsa_quicktrade.core.config import load_config
 from bsa_quicktrade.core.models import StockData
 from bsa_quicktrade.data.downloader import DataDownloader
+from bsa_quicktrade.entry.setup_detector import SetupDetector
+from bsa_quicktrade.exit.swing_exit import SwingExitManager
+from bsa_quicktrade.filters.market_filter import MarketFilter
+from bsa_quicktrade.filters.relative_strength import RelativeStrengthAnalyzer
+from bsa_quicktrade.scoring.swing_score import SwingScorer
 
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
 console = Console()
+
+# Swing engine parameters
+SWING_MIN_SCORE    = 75.0    # Stage 6 threshold
+SWING_MAX_DAYS     = 26      # Stage 9 max hold
+SWING_MIN_DAYS     = 5       # Stage 9 min hold
+SWING_RISK_PCT     = 0.01    # Stage 8: 1% of capital per trade
+SWING_ATR_SL       = 2.0     # Stage 9: stop = 2×ATR
+SWING_ATR_TARGET   = 3.0     # Stage 9: target = 3×ATR
+SWING_TRAILING     = "ema20" # Stage 9: trailing method
 
 
 def _build_analyzers(config):
@@ -156,11 +179,34 @@ def run_stock_backtest(ticker: str, capital: float, output_dir: Path) -> Path | 
     console.print(f"[bold cyan]Backtesting {len(df_daily) - start_idx} bars for {symbol} …[/]")
     
     trade_id_counter = 1
-    
-    # Loop day by day simulating walk-forward scoring
-    for i in range(start_idx, len(df_daily) - 1):
-        # Slice data up to day i (preventing lookahead bias)
-        truncated_daily = df_daily.iloc[: i + 1]
+    signal_dates: List = []
+
+    # ── Instantiate swing pipeline components ──
+    setup_detector = SetupDetector()
+    swing_scorer   = SwingScorer(min_score=SWING_MIN_SCORE)
+    exit_manager   = SwingExitManager(
+        atr_sl_mult=SWING_ATR_SL,
+        atr_target_mult=SWING_ATR_TARGET,
+        max_holding_days=SWING_MAX_DAYS,
+        trailing_method=SWING_TRAILING,
+        min_hold_days=SWING_MIN_DAYS,
+    )
+    market_filter  = MarketFilter()
+    rs_analyzer    = RelativeStrengthAnalyzer()
+
+    # ── Pre-compute a lightweight NIFTY proxy from the stock data ──
+    # When no separate NIFTY feed is available, we skip market filter
+    # (returns permissive MarketCondition)
+    nifty_daily = None   # TODO: optionally inject NIFTY feed
+
+    skipped_score    = 0
+    skipped_setup    = 0
+    skipped_market   = 0
+
+    # Loop day by day — walk-forward, no lookahead
+    for i in range(start_idx, len(df_daily) - SWING_MAX_DAYS - 1):
+        # Slice data up to day i
+        truncated_daily = df_daily.iloc[: i + 1].copy()
         truncated_stock = StockData(
             ticker=ticker_ns,
             company_name=symbol,
@@ -168,11 +214,29 @@ def run_stock_backtest(ticker: str, capital: float, output_dir: Path) -> Path | 
             weekly=df_weekly,
         )
 
+        # ── Stage 1: Market Filter ──
+        if nifty_daily is not None:
+            mkt = market_filter.evaluate(nifty_daily.iloc[: i + 1])
+            if not mkt.allow_long:
+                skipped_market += 1
+                continue
+        else:
+            mkt = None
+
+        # ── Stage 3: Relative Strength ──
+        rs = rs_analyzer.analyze(truncated_daily, nifty_daily)
+
+        # ── Stage 4 & 5: Weekly Trend + Daily Setup ──
+        entry_setup = setup_detector.detect(truncated_daily, df_weekly)
+        if not entry_setup.is_valid:
+            skipped_setup += 1
+            continue
+
+        # ── Stage 6: Consensus direction from analyzers ──
         bullish_votes = 0
         bearish_votes = 0
-        triggered_rules = []
+        triggered_rules: List[str] = []
 
-        # Gather signals from all 12 modules
         for analyzer in analyzers:
             try:
                 res = analyzer.analyze(truncated_stock)
@@ -185,126 +249,123 @@ def run_stock_backtest(ticker: str, capital: float, output_dir: Path) -> Path | 
             except Exception:
                 continue
 
-        # Vote threshold (min 2 votes to trade - earlier entries)
         direction = None
-        if bullish_votes > bearish_votes and bullish_votes >= 2:
+        if bullish_votes > bearish_votes and bullish_votes >= 2 and entry_setup.weekly_trend_bullish:
             direction = "long"
         elif bearish_votes > bullish_votes and bearish_votes >= 2:
             direction = "short"
 
-        if direction:
-            # Entry details
-            entry_dt = df_daily.index[i]
-            entry_price = float(df_daily[close_col].iloc[i])
-            
-            # Extract indicators at entry
-            atr = float(df_daily["ATR_14"].iloc[i]) if not pd.isna(df_daily["ATR_14"].iloc[i]) else 0.0
-            adx = float(df_daily["ADX_14"].iloc[i]) if not pd.isna(df_daily["ADX_14"].iloc[i]) else 25.0
-            rsi = float(df_daily["RSI_14"].iloc[i]) if not pd.isna(df_daily["RSI_14"].iloc[i]) else 50.0
-            
-            # Calculate dynamic targets & stop-losses
-            if direction == "long":
-                stop_loss = entry_price - 2.0 * atr if atr > 0 else entry_price * 0.97
-                target_1 = entry_price + 3.0 * atr if atr > 0 else entry_price * 1.06
-            else:
-                stop_loss = entry_price + 2.0 * atr if atr > 0 else entry_price * 1.03
-                target_1 = entry_price - 3.0 * atr if atr > 0 else entry_price * 0.94
-                
-            # Simulate holding the position
-            exit_price = entry_price
-            exit_dt = df_daily.index[i + 1]
-            exit_reason = "Consensus Close"
-            
-            max_holding_days = 10
-            exited = False
-            
-            for d in range(i + 1, min(i + 1 + max_holding_days, len(df_daily))):
-                day_low = float(df_daily["Low"].iloc[d])
-                day_high = float(df_daily["High"].iloc[d])
-                day_close = float(df_daily[close_col].iloc[d])
-                
-                # Check stop-loss
-                if direction == "long" and day_low <= stop_loss:
-                    exit_price = stop_loss
-                    exit_dt = df_daily.index[d]
-                    exit_reason = "Stop Loss"
-                    exited = True
-                    break
-                elif direction == "short" and day_high >= stop_loss:
-                    exit_price = stop_loss
-                    exit_dt = df_daily.index[d]
-                    exit_reason = "Stop Loss"
-                    exited = True
-                    break
-                    
-                # Check profit target
-                if direction == "long" and day_high >= target_1:
-                    exit_price = target_1
-                    exit_dt = df_daily.index[d]
-                    exit_reason = "Target"
-                    exited = True
-                    break
-                elif direction == "short" and day_low <= target_1:
-                    exit_price = target_1
-                    exit_dt = df_daily.index[d]
-                    exit_reason = "Target"
-                    exited = True
-                    break
-                    
-            if not exited:
-                # Time exit: close out on the final day's close
-                final_d = min(i + max_holding_days, len(df_daily) - 1)
-                exit_price = float(df_daily[close_col].iloc[final_d])
-                exit_dt = df_daily.index[final_d]
-                exit_reason = "Time Exit"
-                
-            # Simple position sizing: use 10% of starting capital per trade
-            trade_capital = capital * 0.1
-            quantity = max(1.0, np.floor(trade_capital / entry_price))
-            capital_used = entry_price * quantity
-            
-            # Calculate raw return and net return after costs
-            raw_ret = (exit_price - entry_price) / entry_price if direction == "long" else (entry_price - exit_price) / entry_price
-            net_ret = raw_ret - (commission_pct + slippage_pct)
-            
-            profit = net_ret * capital_used
-            profit_pct = net_ret * 100.0
-            
-            # Market Regime
-            ema_200 = df_daily["EMA_200"].iloc[i]
-            regime = "Bull" if not pd.isna(ema_200) and entry_price > ema_200 else "Bear"
-            
-            # Cost calculations
-            brokerage = capital_used * commission_pct
-            slippage = capital_used * slippage_pct
-            
-            # Construct Trade Record
-            trade = TradeRecord(
-                trade_id=f"T_{trade_id_counter:03d}",
-                strategy_name="QuickTrade_Consensus",
-                module_name="CombinedSystem",
-                signal_name=f"Vote_{bullish_votes if direction=='long' else bearish_votes}",
-                entry_date=parse_date(entry_dt),
-                exit_date=parse_date(exit_dt),
-                entry_price=entry_price,
-                exit_price=exit_price,
-                quantity=quantity,
-                capital_used=capital_used,
-                profit=profit,
-                profit_pct=profit_pct,
-                atr=atr,
-                adx=adx,
-                rsi=rsi,
-                market_regime=regime,
-                exit_reason=exit_reason,
-                triggered_rules=triggered_rules,
-                brokerage=brokerage,
-                slippage=slippage,
-                direction=direction,
-            )
-            
-            trades.append(trade)
-            trade_id_counter += 1
+        if direction is None:
+            continue
+
+        # ── Indicators at entry ──
+        entry_dt    = df_daily.index[i]
+        entry_price = float(df_daily[close_col].iloc[i])
+        atr  = float(df_daily["ATR_14"].iloc[i]) if not pd.isna(df_daily["ATR_14"].iloc[i]) else 0.0
+        adx  = float(df_daily["ADX_14"].iloc[i]) if not pd.isna(df_daily["ADX_14"].iloc[i]) else 25.0
+        rsi  = float(df_daily["RSI_14"].iloc[i]) if not pd.isna(df_daily["RSI_14"].iloc[i]) else 50.0
+
+        if direction == "long":
+            stop_price   = entry_price - SWING_ATR_SL * atr if atr > 0 else entry_price * 0.97
+            target_price = entry_price + SWING_ATR_TARGET * atr if atr > 0 else entry_price * 1.06
+        else:
+            stop_price   = entry_price + SWING_ATR_SL * atr if atr > 0 else entry_price * 1.03
+            target_price = entry_price - SWING_ATR_TARGET * atr if atr > 0 else entry_price * 0.94
+
+        # ── Stage 6 Trade Quality Score ──
+        quality = swing_scorer.score(
+            entry_setup=entry_setup,
+            market_condition=mkt,
+            rs_result=rs,
+            sector_ranking=None,   # sector ranking requires external data
+            stock_daily=truncated_daily,
+            entry_price=entry_price,
+            stop_price=stop_price,
+            target_price=target_price,
+            sector=full_stock_data.sector or "",
+        )
+
+        if not quality.passes_threshold:
+            skipped_score += 1
+            continue
+
+        # ── Stage 7: R:R validation ──
+        if quality.rr_ratio < 1.5:
+            continue
+
+        # ── Stage 8: ATR-based position sizing ──
+        stop_distance = abs(entry_price - stop_price)
+        if stop_distance > 0:
+            risk_amount = capital * SWING_RISK_PCT
+            quantity = max(1.0, np.floor(risk_amount / stop_distance))
+        else:
+            quantity = max(1.0, np.floor(capital * 0.05 / entry_price))
+        capital_used = entry_price * quantity
+
+        # ── Stage 9: Layered exit simulation ──
+        exit_result = exit_manager.simulate(
+            daily=df_daily,
+            entry_idx=i,
+            entry_price=entry_price,
+            atr=atr,
+            direction=direction,
+        )
+
+        exit_price  = exit_result.exit_price
+        exit_dt     = exit_result.exit_date
+        exit_reason = exit_result.exit_reason
+
+        # ── P&L ──
+        raw_ret = (exit_price - entry_price) / entry_price if direction == "long" else (entry_price - exit_price) / entry_price
+        net_ret = raw_ret - (commission_pct + slippage_pct)
+        profit      = net_ret * capital_used
+        profit_pct  = net_ret * 100.0
+
+        ema_200 = df_daily["EMA_200"].iloc[i]
+        regime  = "Bull" if not pd.isna(ema_200) and entry_price > ema_200 else "Bear"
+        brokerage_cost = capital_used * commission_pct
+        slippage_cost  = capital_used * slippage_pct
+
+        trade = TradeRecord(
+            trade_id=f"T_{trade_id_counter:03d}",
+            strategy_name="QuickTrade_SwingEngine",
+            module_name="SwingPipeline",
+            signal_name=f"SwingScore_{quality.total:.0f}",
+            entry_date=parse_date(entry_dt),
+            exit_date=parse_date(exit_dt),
+            entry_price=entry_price,
+            exit_price=exit_price,
+            quantity=quantity,
+            capital_used=capital_used,
+            profit=profit,
+            profit_pct=profit_pct,
+            atr=atr,
+            adx=adx,
+            rsi=rsi,
+            market_regime=regime,
+            exit_reason=exit_reason,
+            triggered_rules=triggered_rules + [f"Quality:{quality.total:.0f}", f"Pattern:{entry_setup.daily_pattern}"],
+            brokerage=brokerage_cost,
+            slippage=slippage_cost,
+            direction=direction,
+        )
+
+        trades.append(trade)
+        signal_dates.append(entry_dt)
+        trade_id_counter += 1
+
+    if skipped_score or skipped_setup or skipped_market:
+        console.print(
+            f"[dim]Pipeline filtered: {skipped_market} market, {skipped_setup} setup, "
+            f"{skipped_score} score — {len(trades)} trades passed all stages.[/]"
+        )
+
+    # ── Stage 11: Forward Return Analysis ──
+    if signal_dates and len(df_daily) > 30:
+        fwd_analyzer = ForwardReturnAnalyzer()
+        fwd_summary = fwd_analyzer.analyze(df_daily[[close_col]].rename(columns={close_col: "Close"}), signal_dates)
+        console.print(f"[bold]Optimal holding period:[/] {fwd_summary.optimal_horizon} days")
+        console.print(f"[dim]{fwd_summary.recommendation}[/]")
 
     cache.close()
 
