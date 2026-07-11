@@ -67,6 +67,39 @@ python -m bsa_quicktrade chart TATAMOTORS
 python -m bsa_quicktrade backtest RELIANCE
 ```
 
+### Backtest Analytics & Research Engine
+Generate institutional-grade HTML dashboards, compute advanced risk metrics, partition performance by market regimes, and compare strategies from trade log execution data.
+
+**Single Strategy Performance Dashboard & Export:**
+```bash
+PYTHONPATH=src:$PYTHONPATH python3 -m bsa_quicktrade.analytics.cli \
+    --log path/to/tradelog.csv \
+    --strategy "TrendFollowing" \
+    --capital 100000 \
+    --output-dir output \
+    --json output/metrics.json \
+    --csv output/metrics.csv
+```
+
+**Cross-Strategy Comparison Dashboard:**
+Compare multiple strategies side-by-side:
+```bash
+PYTHONPATH=src:$PYTHONPATH python3 -m bsa_quicktrade.analytics.cli \
+    --compare "TrendFollow:path/to/trend.csv" \
+    --compare "MeanRevert:path/to/mean_rev.csv" \
+    --capital 100000 \
+    --output-dir output
+```
+
+**Backtest Real Stock Data & Generate Reports:**
+You can run the consensus backtest system directly on any NSE stock downloaded automatically from Yahoo Finance. This script runs the backtest over 2 years of daily data, generates the TradeLog CSV, and compiles the HTML dashboard:
+```bash
+PYTHONPATH=src:$PYTHONPATH python3 src/bsa_quicktrade/analytics/run_backtest.py RELIANCE --capital 100000 --output output
+```
+Replace `RELIANCE` with any valid NSE ticker (e.g., `PAYTM`, `TCS`, `INFOSYS`). The outputs will be saved to:
+- **HTML Dashboard Report**: `output/{TICKER}_analytics_report.html`
+- **Standardized Trade Log**: `output/{TICKER}_tradelog.csv`
+
 ### CLI Options
 ```bash
 python -m bsa_quicktrade scan --top 20          # Top 20 instead of 10
@@ -126,6 +159,7 @@ src/bsa_quicktrade/
 ├── scoring/         # Weighted aggregation + ranking
 ├── output/          # Rich reports + mplfinance charts
 ├── backtesting/     # Walk-forward backtesting engine
+├── analytics/       # TradeLog parser, risk/regime engines, Plotly dashboards, exporters
 └── main.py          # CLI entry point
 ```
 
